@@ -18,6 +18,23 @@
 #define FUZZY_EQ 0.01
 
 #define DEBUG(file, line, func, msg) fprintf(stderr, "DEBUG - %s_%d_%s: %s", file, line, func, msg);
+//NEW STUFFS
+double coord_2d_area_triangle(const coord_2d_t*a,const coord_2d_t*b,const coord_2d_t*c){
+
+int ax = a->x;
+int ay = a->y;
+int bx = b->x;
+int by = b->y;
+int cx = c->x;
+int cy = c->y;
+
+int area = abs((ax*(by-cy)+bx*(cy-ay)+cx*(ay-by))/2);
+return area;
+	
+}
+
+
+
 
 double coord_2d_dist(const coord_2d_t* a, const coord_2d_t* b){
 
